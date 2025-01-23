@@ -1,0 +1,2 @@
+.venv
+#para que al hacer la subida de los datos al github no se suba el entorno virtual
