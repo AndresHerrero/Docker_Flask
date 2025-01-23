@@ -9,6 +9,6 @@ DEBUG = True # En despliegue esto pasa a FALSE
 
 # Ejemplo basico de postgresql
 # Comparalo con ejemplo de Mysql
-SQLALCHEMY_DATABASE_URI= 'postgresql+psycopg2://postgre:postgre@db:5432/db'
+SQLALCHEMY_DATABASE_URI= 'postgresql+psycopg2://Miguel:1234@db:5432/db'
 SQLALCHEMY_TRACK_MODIFICATIONS=False
 

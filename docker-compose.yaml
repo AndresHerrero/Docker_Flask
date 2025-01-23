@@ -1,21 +1,27 @@
 services:
-  web:
+  db:
+    image: postgres:15
+    container_name: database_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: Miguel
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  aplicacion:
     build:
       context: ./
       dockerfile: DockerFiles/dockerfile
+    container_name: flask_app
     environment:
-      POSTGRES_USER: postgre
-      POSTGRES_PASSWORD: postgre
+      POSTGRES_USER: Miguel
+      POSTGRES_PASSWORD: 1234
       POSTGRES_DB: db
     ports:
       - "5000:5000"
     depends_on:
       - db
-  db:
-    image: postgres:15
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 volumes:
   postgres_data:
